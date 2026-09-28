@@ -1,0 +1,2 @@
+{:linters {:clojure-lsp/unused-public-var {:exclude-when-defined-by #{lsp.other/bind-lots}}}
+ :hooks {:analyze-call {lsp.other/bind-lots hooks.lsp.other/bind-lots}}}

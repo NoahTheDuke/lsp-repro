@@ -1,0 +1,12 @@
+(ns hooks.lsp.other
+  (:require
+   [clj-kondo.hooks-api :as api]))
+
+(defn bind-lots
+  [{:keys [node]}]
+  (let [new-node (api/coerce
+                  '[(def ^:dynamic *foo* nil)
+                    (defn get-foo [] *foo*)
+                    (defn query-foo [x] (get *foo* x))])]
+    {:node (with-meta new-node (meta node))
+     :defined-by 'lsp.other/bind-lots}))

@@ -1,12 +1,10 @@
 (ns lsp.core
   (:require [lsp.other :as o]))
 
-(defprotocol P
-  (f [a]))
+(o/bind-lots)
 
-;; uncomment the line below to see that both usages are linted when linting a directory vs a file
-;; (o/one-arg 1 2)
+(get *foo* :hello)
 
-(defrecord R []
-  P
-  (f [_] (o/one-arg 1 2)))
+(get-foo)
+
+(query-foo 1)
