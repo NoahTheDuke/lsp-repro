@@ -3,8 +3,4 @@
 
 (o/bind-lots)
 
-(get *foo* :hello)
-
-(get-foo)
-
 (query-foo 1)
